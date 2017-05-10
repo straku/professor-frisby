@@ -1,0 +1,6 @@
+{
+  "flow.enabled": false,
+  "eslint.enable": false,
+  "editor.renderIndentGuides": false,
+  "editor.formatOnSave": false
+}
