@@ -1,24 +1,24 @@
-// semigroup is a type with concat method
+// Semigroup is a type with concat method
 
-// string is a semigroup because it has concat method
+// string is a Semigroup because it has concat method
 {
   const result = 'a'.concat('b').concat('c');
   console.log(result);
 }
 
-// array is a semigroup because it has concat method
+// array is a Semigroup because it has concat method
 {
   const result = [1, 2].concat([3, 4]).concat([5, 6]);
   console.log(result);
 }
 
-// semigroups are associative
+// Semigroups are associative
 {
   console.log(1 + (1 + 1) === (1 + 1) + 1);
   console.log('a'.concat('b').concat('c') === 'a'.concat('b'.concat('c')));
 }
 
-// Sum semigroup
+// Sum Semigroup
 const Sum = x => ({
   x,
   concat: ({ x: y }) => Sum(x + y),
@@ -27,7 +27,7 @@ const Sum = x => ({
 
 console.log(Sum(1).concat(Sum(2)));
 
-// All semigroup
+// All Semigroup
 // true && false -> false
 // true && true -> true
 const All = x => ({
@@ -38,7 +38,7 @@ const All = x => ({
 
 console.log(All(true).concat(All(true)));
 
-// First semigroup
+// First Semigroup
 // always keeps the first value without concatenating new values
 const First = x => ({
   x,
